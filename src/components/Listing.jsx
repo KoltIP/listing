@@ -1,12 +1,21 @@
 import React from 'react';
+import ReactDOM from 'react-dom/client';
+import classes from '../styles/Listing.css';
+import Item from '../components/Item';
+
 
 const Listing = (props) => {
-    console.log(props);
+    
     const products = props.products;
 
-    return(   
+    return(  
         <div>
-            Хорошо
+        {
+            //<Item product = {products[1]} />
+            products.map(
+                (item) => <Item key={item.listing_id} product = {item} />
+            )
+        } 
         </div>
     )    
 }
